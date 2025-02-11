@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #0f0f1a;
+  --color-text: #b3b3b3;
+  --color-text-border: #3a7bd5;
+  --color-accent: #00a8e8;
+  --color-card: #1a1a2e;
+  --color-card-muted: #16213e;
+  --color-border: #2c3e50;
+
+  --color-background-reading: #0f0f1a;
+  --color-text-reading: #f0f0f0;
+  --color-accent-reading: #00a8e8;
+  --color-card-reading: #1a1a2e;
+  --color-card-muted-reading: #16213e;
+  --color-border-reading: #2c3e50;
+}
+
+[data-theme='light'] {
+  --color-background: #f2f5ec;
+  --color-text: #353538;
+  --color-accent: #1158d1;
+  --color-card: #ced5b4;
+  --color-card-muted: #bbc789;
+  --color-border: #7cadff;
+  --color-background-reading: #f2f5ec;
+  --color-text-reading: #353538;
+  --color-accent-reading: #1158d1;
+  --color-card-reading: #ced5b4;
+  --color-card-muted-reading: #bbc789;
+  --color-border-reading: #7cadff;
+}
+
+/* scrollbar สำหรับแบบแนวตั้ง */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-card);
+  border-radius: 6px;
+  transition: background-color 0.2s ease-out, border-radius 0.2s ease-out;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-card-muted);
+  transition: background-color 0.2s ease-out;
+}
+
+/* scrollbar สำหรับแบบแนวนอน */
+::-webkit-scrollbar {
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-card);
+  border-radius: 6px;
+  transition: background-color 0.2s ease-out, border-radius 0.2s ease-out;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-card-muted);
+  transition: background-color 0.2s ease-out;
+}
+
+.tag {
+  color: var(--color-accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-background);
+  accent-color: var(--color-accent);
+  border-color: var(--color-border);
+  transition: color 0.2s ease-out, background-color 0.2s ease-out, accent-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.flex-container {
+  display: flex;
+  align-items: stretch;
+}
+
+h1 {
+  font-size: 1.75rem; /* ขนาดใหญ่ที่สุด */
+  font-weight: bold;
+  color: var(--color-text-border);
+  padding-bottom: 5px; /* เพิ่มระยะห่างระหว่างข้อความและขอบ */
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: var(--color-text-border);
+  padding-bottom: 5px; /* เพิ่มระยะห่างระหว่างข้อความและขอบ */
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: var(--color-text-border);
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-size: 1rem; /* ขนาดเล็กสุด */
+  font-weight: normal;
+  color: var(--color-text-border);
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-text-border);
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-text-border);
+}
+
+pre {
+  background-color: #1e1e1e; /* พื้นหลังสีดำ */
+  color: #dcdcdc; /* ตัวอักษรสีขาว */
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.link {
+  color: var(--color-accent); /* สีปกติ */
+  transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยนสีให้เนียน */
+}
+
+.link:hover {
+  @apply text-base text-blue-800;
+}
+
+.toc-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.toc-item {
+  padding: 4px 10px;
+  border-left: 2px solid transparent;
+  transition: all 0.1s;
+}
+
+.toc-link {
+  text-decoration: none;
+  color: var(--color-text);
+  display: block;
+  transition: color 0.1s;
+}
+
+/* ระดับของหัวข้อ */
+.toc-h1 {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-left-color: var(--color-card-muted);
+}
+
+.toc-h2 {
+  padding-left: 10px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.toc-h3 {
+  padding-left: 10px;
+  margin-left: 35px;
+  margin-top: 5px;
+}
+
+.toc-h4 {
+  padding-left: 10px;
+  margin-left: 45px;
+}
+
+.toc-h5 {
+  padding-left: 10px;
+  margin-left: 45px;
+}
+
+.toc-h6 {
+  padding-left: 10px;
+  margin-left: 45px;
+}
+
+/* Hover Effect */
+.toc-item:hover {
+  border-left-width: 4px;
+  border-left-color: var(--color-accent)
+}
+
+.toc-link:hover {
+  color: var(--color-accent);
+}
+
+.icon {
+  color: var(--color-accent);
+}
+.icon:hover {
+  color: var(--color-accent);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* เมื่ออยู่ใน forced colors mode */
+@media (forced-colors: active) {
+  :root {
+    --text-color: CanvasText;
+    --background-color: Canvas;
+  }
+
+  body {
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+}
+
+.blog-carousel {
+  width: 90%;
+  margin: auto;
+}
+
+.blog-card {
+  background: var(--color-card);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(5, 1, 59, 0.1);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  margin: 10px 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.swiper-pagination-bullet {
+  background-color: #ffffff !important; /* เปลี่ยนสีปกติ */
+  opacity: 1; /* ทำให้ bullet ไม่จาง */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0077b6 !important; /* เปลี่ยนสี bullet ที่ active */
+}
