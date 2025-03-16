@@ -28,7 +28,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
 
             if (tagId) {
                 const matchedTag = data.data[0].tags?.find((tag: { documentId: string; }) => tag.documentId === tagId);
-                setTagName(matchedTag?.Tag || null); // ✅ เก็บเฉพาะ string หรือ null
+                setTagName(matchedTag?.Tag || null); // เก็บเฉพาะ string หรือ null
             }
         };
 
@@ -67,7 +67,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                                                     layout="responsive"
                                                     width={400}
                                                     height={400}
-                                                    priority={false} // ✅ เปิด Lazy Load
+                                                    priority={false} // เปิด Lazy Load
                                                 />
                                             </a>
                                             <br />

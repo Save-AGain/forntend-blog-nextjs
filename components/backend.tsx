@@ -1,13 +1,19 @@
 interface thumbnail {
   url: string;
+  width: number;
+  height: number;
 }
 
 interface medium {
   url: string;
+  width: number;
+  height: number;
 }
 
 interface small {
   url: string;
+  width: number;
+  height: number;
 }
 
 interface large {

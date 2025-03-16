@@ -25,15 +25,15 @@ const fetchBlog = async (id: string) => {
 
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
-    const [blog, setBlogs] = useState<Blog>();  // ใช้ useState เพื่อเก็บข้อมูลบล็อก
-    const [loading, setLoading] = useState(true);  // ใช้ state เพื่อตรวจสอบการโหลดข้อมูล
+    const [blog, setBlogs] = useState<Blog>(); 
+    const [loading, setLoading] = useState(true);  
 
     useEffect(() => {
         const getBlog = async () => {
             const blogId = (await params).id;
             const fetchedBlog = await fetchBlog(blogId);
-            setBlogs(fetchedBlog);  // เก็บข้อมูลบล็อก
-            setLoading(false);  // ปิดสถานะการโหลด
+            setBlogs(fetchedBlog);  
+            setLoading(false);  
         };
         getBlog();
     }, [params]);
@@ -74,13 +74,12 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                     description: blog?.Description.substring(0, 150),
                     url: `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/blogs/${blog?.documentId}`,
                     type: "article",
-                    images: [{ url: blog?.Images_cover.url, alt: blog?.Title }],
+                    images: [{ url: blog?.Images_cover?.url, alt: blog?.Title }],
                 }}
                 twitter={{
                     cardType: "summary_large_image",
                     handle: blog?.Title,
-                    description: blog?.Description,
-                    image: blog?.Images_cover.url,
+                    image: blog?.Images_cover?.url,
                 }}
             />
 
@@ -88,7 +87,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                 type="BlogPosting"
                 url={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/blogs/${blog.documentId}`}
                 title={blog?.Title}
-                images={[blog?.Images_cover.url]}
+                images={[blog?.Images_cover?.url]}
                 datePublished={blog?.createdAt}
                 dateModified={blog?.updatedAt}
                 authorName="Save AGain"
@@ -107,7 +106,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                             height={400}
                             src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${blog?.Images_cover?.url}`}
                             alt="Cover"
-                            priority={false} // ✅ เปิด Lazy Load
+                            priority={false} // เปิด Lazy Load
                         />
                     </div>
 
@@ -146,18 +145,17 @@ export default function Page({ params }: { params: Promise<{ id: string }> }) {
                             {blog?.Title}
                         </h1>
 
-                        {/* Blog Tags */}
                         <div className="flex flex-wrap gap-x-3 gap-y-2">
                             {blog?.tags?.map((tag) => (
                                 <Link
-                                    href={`/tags/${tag.documentId}`}
-                                    key={tag.documentId}
+                                    href={`/tags/${tag?.documentId}`}
+                                    key={tag?.documentId}
                                     className="px-3 py-1 rounded-full text-sm font-medium transition-all
                                     bg-[#1a1a2e] bg-opacity-50 text-white
                                     hover:bg-[#0d1a2b] hover:scale-105 shadow-md"
                                     style={{ color: "var(--color-accent)", textDecoration: "none" }}
                                 >
-                                    {tag.Tag}
+                                    {tag?.Tag}
                                 </Link>
                             ))}
                         </div>

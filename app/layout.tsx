@@ -29,6 +29,7 @@ export default function RootLayout({
     <html>
       <Head>
         <DefaultSeo {...defaultSeoConfig} />
+        <script async defer data-domain="saveagain.dev" src="https://analytics.saveagain.dev/js/plausible.js"></script>
       </Head>
       <body>
         <section className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0 h-screen flex flex-col justify-between font-sans">

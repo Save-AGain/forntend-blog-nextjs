@@ -62,7 +62,7 @@ export default function BlogPage() {
                           layout="responsive"
                           width={400}
                           height={400}
-                          priority={false} // ✅ เปิด Lazy Load
+                          priority={false} // เปิด Lazy Load
                         />
                       </a>
                       <br />

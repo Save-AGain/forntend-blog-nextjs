@@ -18,13 +18,13 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ block }) => {
     <div>
       {/* รูปภาพปกติ */}
       <Image
-        src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${block.formats.large.url}`}
-        alt={block.alternativeText || ""}
+        src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${block?.formats?.large?.url || block?.formats?.medium?.url || block?.formats?.small?.url || block?.formats?.thumbnail?.url}`}
+        alt={block?.alternativeText || ""}
         layout="responsive"
-        width={block.formats.large.width}
-        height={block.formats.large.height}
+        width={block?.formats?.large?.width || block?.formats?.medium?.width || block?.formats?.small?.width || block?.formats?.thumbnail?.width}
+        height={block?.formats?.large?.height || block?.formats?.medium?.height || block?.formats?.small?.height || block?.formats?.thumbnail?.height}
         className="transform transition duration-300 hover:scale-105 rounded-lg "
-        priority={false} // ✅ เปิด Lazy Load
+        priority={false} // เปิด Lazy Load
         style={{ maxWidth: "100%", cursor: "pointer" }}
         onClick={handleImageClick}
       />
@@ -47,12 +47,12 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ block }) => {
           onClick={handleImageClick}
         >
           <Image
-            src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${block.formats.large.url}`}
-            alt={block.alternativeText || ""}
-            width={block.formats.large.width}
-            height={block.formats.large.height}
+            src={`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${block?.formats?.large?.url || block?.formats?.medium?.url || block?.formats?.small?.url || block?.formats?.thumbnail?.url}`}
+            alt={block?.alternativeText || ""}
+            width={block?.formats?.large?.width || block?.formats?.medium?.width || block?.formats?.small?.width || block?.formats?.thumbnail?.width}
+            height={block?.formats?.large?.height || block?.formats?.medium?.height || block?.formats?.small?.height || block?.formats?.thumbnail?.height}
             style={{ maxWidth: "90%", maxHeight: "90%" }}
-            priority={false} // ✅ เปิด Lazy Load
+            priority={false}
           />
         </div>
       )}

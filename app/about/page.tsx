@@ -13,7 +13,7 @@ export default function About() {
                     width={850}
                     height={380}
                     className="w-full h-full object-cover object-center rounded-lg shadow-md"
-                    priority={false} // ✅ เปิด Lazy Load
+                    priority={false} // เปิด Lazy Load
                 />
                 <div className="absolute left-6 top-6 md:left-12 md:top-12 bg-black bg-opacity-60 p-4 rounded-lg">
                     <h1 className="text-2xl md:text-4xl font-bold">Save AGain</h1>
@@ -37,7 +37,7 @@ export default function About() {
                         width={400}
                         height={400}
                         className="w-full h-full max-h-[400] max-w-[400] object-cover object-center rounded-lg shadow-md"
-                        priority={false} // ✅ เปิด Lazy Load
+                        priority={false} // เปิด Lazy Load
                     />
                 </div>
                 <div className="mt-4 text-center">

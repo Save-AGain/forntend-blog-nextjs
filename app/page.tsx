@@ -15,9 +15,9 @@ export default async function Home() {
           width={1200}
           height={400}
           className="w-full h-full object-cover object-center"
-          priority // ✅ เปิด Lazy Load
+          priority // เปิด Lazy Load
         />
-        <div className="absolute left-6 top-6 md:left-12 md:top-12 bg-black bg-opacity-70 p-4 rounded-lg xl:max-w-[540] max-h-[190] max-w-[440]">
+        <div className="absolute left-6 top-6 md:left-12 md:top-12 bg-black bg-opacity-70 p-4 rounded-lg xl:max-w-[540px] max-h-[190px] max-w-[440px]">
           <h1 className="text-2xl md:text-4xl font-bold">Save AGain</h1>
           <p className="text-sm md:text-lg mt-2">สวัสดีครับทุกท่าน ผมชื่อเกน ผมสร้าง blog นี้ขึ้นมาเพื่อแชร์ความชอบ, งานอดิเรก, โปรเจคและเรื่องราวต่างๆ หวังว่าทุกๆคนจะชอบกันนะ</p>
         </div>
@@ -33,7 +33,7 @@ export default async function Home() {
           width={400}
           height={400}
           className="object-cover object-center"
-          priority // ✅ เปิด Lazy Load
+          priority 
         />
         </div>
         <div className="mt-4 text-center">
